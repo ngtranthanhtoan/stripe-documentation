@@ -19,7 +19,7 @@ A Review is either `open` or `closed`. Closed Reviews are immutable.
 ```mermaid
 stateDiagram-v2
     [*] --> open: rule fired OR 3DS indeterminate
-    open --> approved: POST /reviews/:id/approve
+    open --> approved: POST /reviews/.../approve
     open --> refunded: refund the underlying Charge
     open --> refunded_as_fraud: refund + mark fraudulent
     open --> disputed: chargeback lands first

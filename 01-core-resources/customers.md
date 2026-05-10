@@ -23,7 +23,7 @@ Customers don't have a `status` enum. The interesting state is *deletion*:
 ```mermaid
 stateDiagram-v2
     [*] --> active: create
-    active --> deleted: DELETE /v1/customers/:id
+    active --> deleted: DELETE /v1/customers/...
     deleted --> [*]
 ```
 

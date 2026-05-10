@@ -29,7 +29,7 @@ A Profile is persistent. It doesn't have a payment-style status enum.
 ```mermaid
 stateDiagram-v2
     [*] --> active: POST /v1/profiles
-    active --> active: POST /v1/profiles/:id (update)
+    active --> active: POST /v1/profiles/... (update)
     active --> active: verification updated
     active --> deleted: DELETE (where supported)
     deleted --> [*]

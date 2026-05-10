@@ -21,8 +21,8 @@ Finalized invoices are tax documents. In most jurisdictions, *editing* an issued
 ```mermaid
 stateDiagram-v2
     [*] --> issued: POST /v1/credit_notes
-    issued --> void: POST /v1/credit_notes/:id/void
-    void --> [*]
+    issued --> voided: POST .../void
+    voided --> [*]
     issued --> [*]
 ```
 
