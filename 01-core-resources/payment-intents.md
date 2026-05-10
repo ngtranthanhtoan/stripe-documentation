@@ -63,24 +63,24 @@ What each state means:
 
 ### Identity & money
 
-| Field | Notes |
-|---|---|
-| `id` | `pi_…` |
-| `client_secret` | Opaque token for client-side confirmation. **Treat as scoped credential** — anyone with it can confirm/cancel this PI. Don't log it; don't put it in URLs you log. |
-| `amount` | What you intend to charge. |
-| `currency` | ISO. |
-| `status` | enum, see above. |
-| `created`, `canceled_at`, `cancellation_reason` | Lifecycle timestamps + reason. |
+| Field                                           | Notes                                                                                                                                                              |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                            | `pi_…`                                                                                                                                                             |
+| `client_secret`                                 | Opaque token for client-side confirmation. **Treat as scoped credential** — anyone with it can confirm/cancel this PI. Don't log it; don't put it in URLs you log. |
+| `amount`                                        | What you intend to charge.                                                                                                                                         |
+| `currency`                                      | ISO.                                                                                                                                                               |
+| `status`                                        | enum, see above.                                                                                                                                                   |
+| `created`, `canceled_at`, `cancellation_reason` | Lifecycle timestamps + reason.                                                                                                                                     |
 
 ### Payment method
 
-| Field | Notes |
-|---|---|
-| `payment_method` | Currently-attached PM. |
-| `payment_method_types` | Whitelist of PM type strings. Auto-derived if you use `automatic_payment_methods`. |
-| `automatic_payment_methods.enabled` | Recommended. Stripe shows the customer the optimal PM set based on their location, currency, and your Dashboard settings. |
-| `payment_method_options` | Per-PM-type options: `card.request_three_d_secure`, `us_bank_account.verification_method`, etc. |
-| `payment_method_configuration_details.id` | Which [PaymentMethodConfiguration](../02-payment-methods/payment-method-configurations.md) governed PM selection. |
+| Field                                     | Notes                                                                                                                     |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `payment_method`                          | Currently-attached PM.                                                                                                    |
+| `payment_method_types`                    | Whitelist of PM type strings. Auto-derived if you use `automatic_payment_methods`.                                        |
+| `automatic_payment_methods.enabled`       | Recommended. Stripe shows the customer the optimal PM set based on their location, currency, and your Dashboard settings. |
+| `payment_method_options`                  | Per-PM-type options: `card.request_three_d_secure`, `us_bank_account.verification_method`, etc.                           |
+| `payment_method_configuration_details.id` | Which [PaymentMethodConfiguration](../02-payment-methods/payment-method-configurations.md) governed PM selection.         |
 
 ### Capture
 
