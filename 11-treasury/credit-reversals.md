@@ -18,7 +18,7 @@ Banking rails (ACH especially) require a structured "return" mechanism for misro
 stateDiagram-v2
     [*] --> processing: created
     processing --> posted: network confirms reversal
-    processing --> canceled: rare; pre-submission cancel
+    processing --> canceled: rare, pre-submission cancel
     posted --> [*]
     canceled --> [*]
 ```

@@ -29,7 +29,7 @@ stateDiagram-v2
     advancing --> ready: all triggered events processed
     advancing --> internal_failure: Stripe-side error
     ready --> [*]: DELETE
-    advancing --> [*]: DELETE (rare; cancels in-flight)
+    advancing --> [*]: DELETE (rare, cancels in-flight)
     internal_failure --> [*]: DELETE (only escape)
 ```
 

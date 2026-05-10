@@ -34,7 +34,7 @@ stateDiagram-v2
     pending --> succeeded: ACH cleared (~1-2 business days)
     pending --> failed: bank rejected / insufficient funds
     pending --> canceled: POST /v1/topups/.../cancel (while still pending)
-    succeeded --> reversed: rare; bank pulls back days later
+    succeeded --> reversed: rare, bank pulls back days later
     succeeded --> [*]
     failed --> [*]
     canceled --> [*]

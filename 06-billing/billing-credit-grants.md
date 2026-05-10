@@ -38,7 +38,7 @@ stateDiagram-v2
     active --> exhausted: balance fully drawn
     expired --> [*]
     voided --> [*]
-    exhausted --> [*]: balance is 0; grant remains for audit
+    exhausted --> [*]: balance is 0, grant remains for audit
 ```
 
 The grant object doesn't carry a literal `status` enum the way Subscription does; you derive its state from `voided_at`, `expires_at`, `effective_at`, and the current ledger balance.
